@@ -6,6 +6,7 @@
     <title>InfoCursos - Cursos de Tecnologia</title>
     <link rel="stylesheet" href="css/vars.css">
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/acessibilidade.css">
     <style>
         body {
             margin: 0;
@@ -16,7 +17,6 @@
 </head>
 <body>
     <div class="container-principal">
-        <!-- Cabeçalho Atualizado -->
         <header class="cabecalho">
             <div class="logo-container">
                 <div class="logo-quadrado">IC</div>
@@ -28,7 +28,6 @@
             </div>
         </header>
 
-        <!-- Restante do conteúdo permanece igual -->
         <main class="conteudo">
             <h1 class="titulo-bemvindo">Seja bem vindo(a) ao app InfoCursos</h1>
             <div class="saudacao-usuario">Olá, <span class="nome-usuario">Usuário</span></div>
@@ -63,5 +62,12 @@
             </a>
         </nav>
     </div>
+
+    <div class="accessibility-controls">
+        <button id="theme-toggle" class="control-button">🌙/☀️</button>
+        <button id="increase-font" class="control-button">A+</button>
+        <button id="decrease-font" class="control-button">A-</button>
+    </div>
+    <script src="js/acessibilidade.js"></script>
 </body>
 </html>

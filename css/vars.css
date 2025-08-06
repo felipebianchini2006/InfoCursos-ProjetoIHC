@@ -1,67 +1,63 @@
-/* vars.css - Variáveis de estilo globais */
+/* vars.css - VERSÃO FINAL COM A LÓGICA DE CORES CORRIGIDA */
 :root {
-    /* Cores principais atualizadas */
+    /* Cores (Tema Claro - Padrão) */
     --cor-primaria: #4361ee;
     --cor-secundaria: #3f37c9;
     --cor-terciaria: #4895ef;
     --cor-destaque: #4cc9f0;
     
-    /* Cores de texto */
-    --texto-escuro: #2b2d42;
-    --texto-claro: #f8f9fa;
+    /* Textos (Tema Claro - Padrão) */
+    --texto-escuro: #2b2d42;    /* Texto principal sobre fundo claro */
+    --texto-claro: #f8f9fa;     /* Texto para usar sobre fundos escuros/coloridos (ex: header, footer) */
     --texto-destaque: #3a3a3a;
     --texto-secundario: #6c757d;
     
-    /* Cores de fundo */
+    /* Fundos (Tema Claro - Padrão) */
     --fundo-principal: #f8f9fa;
     --fundo-card: #ffffff;
     --fundo-header: #4361ee;
     --fundo-nav: #3f37c9;
     
-    /* Novas cores para estados */
+    /* O resto das variáveis permanece o mesmo */
     --cor-sucesso: #4bb543;
     --cor-erro: #ff3333;
     --cor-aviso: #ffc107;
-    
-    /* Restante mantido igual */
-    
-    /* Bordas */
     --raio-borda: 12px;
     --raio-borda-pequeno: 6px;
     --borda-fina: 1px solid rgba(0, 0, 0, 0.1);
-    
-    /* Sombras */
     --sombra-card: 0 4px 8px rgba(0, 0, 0, 0.1);
     --sombra-botao: 0 2px 4px rgba(0, 0, 0, 0.15);
-    
-    /* Efeitos */
-    --efeito-blur: blur(4px);
-    --opacidade-hover: 0.8;
     --transicao-rapida: all 0.3s ease;
-    
-    /* Espaçamentos */
-    --espacamento-pequeno: 8px;
-    --espacamento-medio: 16px;
-    --espacamento-grande: 24px;
-    --espacamento-xl: 32px;
-    
-    /* Tipografia */
     --fonte-principal: 'Inter', sans-serif;
-    --fonte-secundaria: 'Arial', sans-serif;
-    --tamanho-texto-corrido: 1rem;  /* 16px */
-    --tamanho-titulo: 2rem;         /* 32px */
-    --tamanho-subtitulo: 1.5rem;    /* 24px */
-    --tamanho-texto-grande: 1.25rem; /* 20px */
-    --tamanho-texto-pequeno: 0.875rem; /* 14px */
-    
-    /* Breakpoints responsivos */
-    --mobile: 480px;
-    --tablet: 768px;
-    --desktop: 1024px;
-    
-    /* Z-index */
     --z-base: 1;
     --z-nav: 10;
     --z-modal: 100;
-    --z-tooltip: 1000;
-  }
+}
+
+/* ==========================================================================
+   VARIÁVEIS PARA MODO ESCURO (DARK MODE) - LÓGICA CORRIGIDA
+   ==========================================================================
+*/
+:root.dark-mode {
+    /* Cores para links e destaques */
+    --cor-primaria: #5ea9ff;
+    --cor-secundaria: #80bfff;
+    --cor-terciaria: #4cc9f0;
+    --cor-destaque: #4895ef;
+
+    /* Textos (Modo Escuro) */
+    --texto-escuro: #ffffff;    /* Texto principal sobre fundo escuro */
+    --texto-claro: #ffffff;     /* << CORRIGIDO! Texto para usar sobre fundos escuros (header, footer) agora é BRANCO */
+    --texto-destaque: #f5f5f5;
+    --texto-secundario: #bbbbbb; 
+
+    /* Fundos (Modo Escuro) */
+    --fundo-principal: #121212;
+    --fundo-card: #1e1e1e;
+    --fundo-header: #1f2335;
+    --fundo-nav: #1f2335;
+
+    /* Bordas e Sombras (Modo Escuro) */
+    --borda-fina: 1px solid rgba(255, 255, 255, 0.15);
+    --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.5);
+}

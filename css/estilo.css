@@ -663,4 +663,8 @@ body {
     .texto-noticia h2 {
         font-size: 1.25rem;
     }
+
+    body, .card-curso, .card-contato, .cabecalho, .menu-navegacao, .fundo-card, .card-login, .card-cadastro {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 }
