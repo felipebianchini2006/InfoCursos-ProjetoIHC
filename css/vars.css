@@ -1,63 +1,63 @@
-/* vars.css - VERSÃO FINAL COM A LÓGICA DE CORES CORRIGIDA */
+/* vars.css - V3.0 - REVISÃO ESTÉTICA GERAL */
 :root {
-    /* Cores (Tema Claro - Padrão) */
-    --cor-primaria: #4361ee;
-    --cor-secundaria: #3f37c9;
-    --cor-terciaria: #4895ef;
-    --cor-destaque: #4cc9f0;
+    /* --- PALETA DE CORES - TEMA CLARO --- */
+    --cor-primaria: #5D5FEF;       /* Roxo/Azul vibrante para ações principais */
+    --cor-secundaria: #3D3C82;    /* Tom mais escuro para hover e títulos */
+    --cor-terciaria: #7A7DFF;     /* Tom mais claro para destaques sutis */
+    --cor-destaque: #F0C419;      /* Amarelo para pontos de atenção (ex: logo) */
+
+    /* --- CORES DE TEXTO --- */
+    --texto-principal: #0D1117;   /* Preto suave para corpo de texto */
+    --texto-secundario: #586069;  /* Cinza para textos de apoio e placeholders */
+    --texto-claro: #FFFFFF;       /* Branco para usar sobre fundos coloridos/escuros */
     
-    /* Textos (Tema Claro - Padrão) */
-    --texto-escuro: #2b2d42;    /* Texto principal sobre fundo claro */
-    --texto-claro: #f8f9fa;     /* Texto para usar sobre fundos escuros/coloridos (ex: header, footer) */
-    --texto-destaque: #3a3a3a;
-    --texto-secundario: #6c757d;
+    /* --- CORES DE FUNDO --- */
+    --fundo-principal: #F6F8FA;   /* Cinza muito claro, mais suave que branco puro */
+    --fundo-card: #FFFFFF;
+    --fundo-header: var(--cor-primaria);
+    --fundo-nav: #FFFFFF;
     
-    /* Fundos (Tema Claro - Padrão) */
-    --fundo-principal: #f8f9fa;
-    --fundo-card: #ffffff;
-    --fundo-header: #4361ee;
-    --fundo-nav: #3f37c9;
-    
-    /* O resto das variáveis permanece o mesmo */
-    --cor-sucesso: #4bb543;
-    --cor-erro: #ff3333;
-    --cor-aviso: #ffc107;
-    --raio-borda: 12px;
-    --raio-borda-pequeno: 6px;
-    --borda-fina: 1px solid rgba(0, 0, 0, 0.1);
-    --sombra-card: 0 4px 8px rgba(0, 0, 0, 0.1);
-    --sombra-botao: 0 2px 4px rgba(0, 0, 0, 0.15);
-    --transicao-rapida: all 0.3s ease;
+    /* --- BORDAS E SOMBRAS --- */
+    --borda-cor: #D1D5DA;
+    --sombra-card: 0 4px 15px rgba(0, 0, 0, 0.06);
+    --sombra-botao: 0 2px 5px rgba(93, 95, 239, 0.4);
+
+    /* --- TIPOGRAFIA E ESPAÇAMENTO --- */
     --fonte-principal: 'Inter', sans-serif;
+    --tamanho-base: 1rem; /* 16px */
+    --raio-borda: 10px;
+    --raio-borda-pequeno: 6px;
+    --transicao-padrao: all 0.25s ease-in-out;
+    
+    /* --- Z-INDEX --- */
     --z-base: 1;
     --z-nav: 10;
     --z-modal: 100;
 }
 
 /* ==========================================================================
-   VARIÁVEIS PARA MODO ESCURO (DARK MODE) - LÓGICA CORRIGIDA
-   ==========================================================================
-*/
+   VARIÁVEIS PARA MODO ESCURO (DARK MODE)
+   ========================================================================== */
 :root.dark-mode {
-    /* Cores para links e destaques */
-    --cor-primaria: #5ea9ff;
-    --cor-secundaria: #80bfff;
-    --cor-terciaria: #4cc9f0;
-    --cor-destaque: #4895ef;
+    /* --- PALETA DE CORES - TEMA ESCURO --- */
+    --cor-primaria: #7A7DFF;       /* Roxo/Azul mais claro para se destacar no escuro */
+    --cor-secundaria: #9DA0FF;    /* Tom ainda mais claro para hover */
+    --cor-terciaria: #5D5FEF;
+    --cor-destaque: #F0C419;
 
-    /* Textos (Modo Escuro) */
-    --texto-escuro: #ffffff;    /* Texto principal sobre fundo escuro */
-    --texto-claro: #ffffff;     /* << CORRIGIDO! Texto para usar sobre fundos escuros (header, footer) agora é BRANCO */
-    --texto-destaque: #f5f5f5;
-    --texto-secundario: #bbbbbb; 
+    /* --- CORES DE TEXTO --- */
+    --texto-principal: #E6EDF3;   /* Branco suave */
+    --texto-secundario: #8B949E;  /* Cinza claro */
+    --texto-claro: #E6EDF3;
 
-    /* Fundos (Modo Escuro) */
-    --fundo-principal: #121212;
-    --fundo-card: #1e1e1e;
-    --fundo-header: #1f2335;
-    --fundo-nav: #1f2335;
+    /* --- CORES DE FUNDO --- */
+    --fundo-principal: #0D1117;   /* Quase preto (cor do GitHub) */
+    --fundo-card: #161B22;        /* Azul-escuro para cards */
+    --fundo-header: #161B22;
+    --fundo-nav: #161B22;
 
-    /* Bordas e Sombras (Modo Escuro) */
-    --borda-fina: 1px solid rgba(255, 255, 255, 0.15);
-    --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.5);
+    /* --- BORDAS E SOMBRAS --- */
+    --borda-cor: #30363D;
+    --sombra-card: 0 0 0 1px var(--borda-cor); /* Sombra sutil que parece uma borda */
+    --sombra-botao: 0 2px 8px rgba(122, 125, 255, 0.3);
 }
