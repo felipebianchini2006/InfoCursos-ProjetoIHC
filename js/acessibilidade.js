@@ -1,69 +1,84 @@
-// js/acessibilidade.js - VERSÃO CORRIGIDA
+// js/acessibilidade.js - VERSÃO FINAL COM NOVAS FUNCIONALIDADES
+
 document.addEventListener('DOMContentLoaded', () => {
+    // --- SELETORES DE ELEMENTOS ---
     const themeToggle = document.getElementById('theme-toggle');
     const increaseFontButton = document.getElementById('increase-font');
     const decreaseFontButton = document.getElementById('decrease-font');
-    const htmlElement = document.documentElement; // Usamos o elemento <html>
+    const resetFontButton = document.getElementById('reset-font'); // Botão de reset
+    const htmlElement = document.documentElement;
+    const backToTopButton = document.getElementById('voltar-ao-topo'); // Botão voltar ao topo
 
-    // --- LÓGICA DO TEMA (MODO CLARO/ESCURO) ---
-    // Função para aplicar o tema salvo
+    // ==========================================================
+    // LÓGICA DO TEMA (MODO CLARO/ESCURO)
+    // ==========================================================
     const applyTheme = (theme) => {
-        if (theme === 'dark-mode') {
-            htmlElement.classList.add('dark-mode');
-        } else {
-            htmlElement.classList.remove('dark-mode');
-        }
+        htmlElement.classList.toggle('dark-mode', theme === 'dark-mode');
     };
 
-    // Botão para alternar o tema
     themeToggle.addEventListener('click', () => {
         htmlElement.classList.toggle('dark-mode');
-        // Salva a preferência no localStorage
-        if (htmlElement.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark-mode');
-        } else {
-            localStorage.setItem('theme', 'light-mode');
-        }
+        const currentTheme = htmlElement.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
+        localStorage.setItem('theme', currentTheme);
     });
 
-    // --- LÓGICA DO TAMANHO DA FONTE ---
-    const getRootFontSize = () => {
-        // Pega o tamanho da fonte computado do elemento html e converte para um número (pixels)
-        const fontSizeStr = getComputedStyle(htmlElement).fontSize;
-        return parseFloat(fontSizeStr);
-    };
+    // ==========================================================
+    // LÓGICA DO TAMANHO DA FONTE
+    // ==========================================================
+    const defaultFontSize = parseFloat(getComputedStyle(htmlElement).fontSize);
 
     const setRootFontSize = (size) => {
-        // Define o novo tamanho da fonte no elemento html em pixels
-        htmlElement.style.fontSize = `${size}px`;
-        localStorage.setItem('font-size', `${size}px`); // Salva a preferência
+        const newSize = Math.max(12, Math.min(24, size)); // Limites de 12px e 24px
+        htmlElement.style.fontSize = `${newSize}px`;
+        localStorage.setItem('font-size', `${newSize}px`);
     };
 
-    // Botões para aumentar e diminuir a fonte
     increaseFontButton.addEventListener('click', () => {
-        const currentSize = getRootFontSize();
-        // Aumenta a fonte em 1px, com um limite máximo de 24px
-        if (currentSize < 24) {
-            setRootFontSize(currentSize + 1);
-        }
+        const currentSize = parseFloat(getComputedStyle(htmlElement).fontSize);
+        setRootFontSize(currentSize + 1);
     });
 
     decreaseFontButton.addEventListener('click', () => {
-        const currentSize = getRootFontSize();
-        // Diminui a fonte em 1px, com um limite mínimo de 12px
-        if (currentSize > 12) {
-            setRootFontSize(currentSize - 1);
-        }
+        const currentSize = parseFloat(getComputedStyle(htmlElement).fontSize);
+        setRootFontSize(currentSize - 1);
     });
 
-    // --- CARREGAR PREFERÊNCIAS SALVAS ---
-    // Carrega o tema salvo ao iniciar a página
+    resetFontButton.addEventListener('click', () => {
+        htmlElement.style.removeProperty('font-size');
+        localStorage.removeItem('font-size');
+    });
+
+    // ==========================================================
+    // LÓGICA DO BOTÃO VOLTAR AO TOPO
+    // ==========================================================
+    const handleScroll = () => {
+        // Mostra o botão se o usuário rolar mais de 300px para baixo
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('mostrar');
+        } else {
+            backToTopButton.classList.remove('mostrar');
+        }
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Rolagem suave
+        });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    backToTopButton.addEventListener('click', scrollToTop);
+
+
+    // ==========================================================
+    // CARREGAR PREFERÊNCIAS SALVAS
+    // ==========================================================
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         applyTheme(savedTheme);
     }
 
-    // Carrega o tamanho da fonte salvo ao iniciar a página
     const savedFontSize = localStorage.getItem('font-size');
     if (savedFontSize) {
         htmlElement.style.fontSize = savedFontSize;
