@@ -93,11 +93,20 @@
     </script>
 
     <div class="accessibility-controls">
-        <button id="reset-font" class="control-button" title="Restaurar fonte">A</button>
-        <button id="increase-font" class="control-button" title="Aumentar fonte">A+</button>
-        <button id="decrease-font" class="control-button" title="Diminuir fonte">A-</button>
-        <button id="theme-toggle" class="control-button" title="Alternar tema">🌙/☀️</button>
+    <button id="reset-font" class="control-button" title="Restaurar fonte">A</button>
+    <button id="increase-font" class="control-button" title="Aumentar fonte">A+</button>
+    <button id="decrease-font" class="control-button" title="Diminuir fonte">A-</button>
+    <button id="theme-toggle" class="control-button" title="Alternar tema">🌙/☀️</button>
+    
+    <div class="color-filter-container">
+        <select id="color-filter-select" class="control-select" title="Filtro de cor para daltonismo">
+            <option value="default">Cores Padrão</option>
+            <option value="protanopia">Protanopia</option>
+            <option value="deuteranopia">Deuteranopia</option>
+            <option value="tritanopia">Tritanopia</option>
+        </select>
     </div>
+</div>
 
     <script src="js/acessibilidade.js"></script>
 

@@ -61,3 +61,64 @@
     --sombra-card: 0 0 0 1px var(--borda-cor); /* Sombra sutil que parece uma borda */
     --sombra-botao: 0 2px 8px rgba(122, 125, 255, 0.3);
 }
+
+    /* ==========================================================================
+   VARIÁVEIS PARA MODO DE ALTO CONTRASTE
+   ========================================================================== */
+:root.high-contrast {
+    /* --- PALETA DE CORES - ALTO CONTRASTE --- */
+    --cor-primaria: #00FFFF;       /* Ciano para máxima visibilidade em links */
+    --cor-secundaria: #FFFF00;    /* Amarelo para destaques */
+    --cor-terciaria: #00FFFF;
+    --cor-destaque: #FFFF00;
+
+    /* --- CORES DE TEXTO --- */
+    --texto-principal: #FFFFFF;
+    --texto-secundario: #FFFFFF;
+    --texto-claro: #FFFFFF;
+    
+    /* --- CORES DE FUNDO --- */
+    --fundo-principal: #000000;
+    --fundo-card: #000000;
+    --fundo-header: #000000;
+    --fundo-nav: #000000;
+    
+    /* --- BORDAS E SOMBRAS --- */
+    --borda-cor: #FFFFFF;
+    --sombra-card: 0 0 0 2px var(--borda-cor); /* Bordas brancas bem visíveis */
+    --sombra-botao: none;
+}
+
+/* ==========================================================================
+   PALETAS DE CORES PARA DALTONISMO
+   ========================================================================== */
+
+/* --- Protanopia (dificuldade com vermelhos) --- */
+/* Usa azuis, amarelos e cinzas, evitando vermelho/verde */
+:root.protanopia {
+    --cor-primaria: #0072B2;    /* Azul forte */
+    --cor-secundaria: #005A8E;   /* Azul escuro */
+    --cor-terciaria: #56B4E9;    /* Azul claro */
+    --cor-destaque: #E69F00;     /* Laranja/Amarelo */
+    --fundo-header: #0072B2;
+}
+
+/* --- Deuteranopia (dificuldade com verdes) --- */
+/* Semelhante à Protanopia, focando em distinção azul/amarelo */
+:root.deuteranopia {
+    --cor-primaria: #D55E00;    /* Laranja avermelhado */
+    --cor-secundaria: #AA4B00;   /* Laranja escuro */
+    --cor-terciaria: #F0E442;    /* Amarelo brilhante */
+    --cor-destaque: #009E73;     /* Verde azulado */
+    --fundo-header: #D55E00;
+}
+
+/* --- Tritanopia (dificuldade com azul/amarelo) --- */
+/* Usa rosa, ciano e tons de vermelho/preto */
+:root.tritanopia {
+    --cor-primaria: #CC79A7;    /* Rosa */
+    --cor-secundaria: #A36185;   /* Rosa escuro */
+    --cor-terciaria: #FF4136;    /* Vermelho brilhante */
+    --cor-destaque: #01FF70;     /* Verde limão */
+    --fundo-header: #CC79A7;
+}

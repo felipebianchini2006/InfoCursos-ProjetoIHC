@@ -57,3 +57,46 @@
         top: 130px; /* Desce ainda mais para limpar o header em coluna */
     }
 }
+
+/* css/acessibilidade.css */
+
+/* --- ESTILOS PARA O MENU SUSPENSO DE FILTROS --- */
+.color-filter-container {
+    position: relative;
+}
+
+.control-select {
+    /* Aparência herdada dos botões */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    border: 1px solid var(--borda-fina);
+    color: var(--texto-escuro);
+    border-radius: var(--raio-borda-pequeno);
+    padding: 8px 28px 8px 8px; /* Espaço para a seta */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1;
+    transition: var(--transicao-padrao);
+    background-color: transparent;
+}
+
+/* Seta do dropdown */
+.color-filter-container::after {
+    content: '▼';
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Permite clicar no select através da seta */
+    color: var(--texto-escuro);
+}
+
+:root.dark-mode .control-select,
+:root.dark-mode .color-filter-container::after {
+    color: var(--texto-destaque);
+    border-color: rgba(255, 255, 255, 0.3);
+}
