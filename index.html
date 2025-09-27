@@ -13,22 +13,7 @@
   </head>
   <body>
     <div id="root"></div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js" async></script>
-    <script>
-      // Garantir que o VLibras seja inicializado corretamente
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          if (window.VLibras && window.VLibras.Widget) {
-            try {
-              new window.VLibras.Widget('https://vlibras.gov.br/app');
-              console.log('VLibras carregado com sucesso!');
-            } catch (error) {
-              console.warn('Erro ao carregar VLibras:', error);
-            }
-          }
-        }, 1000);
-      });
-    </script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

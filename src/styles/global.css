@@ -397,6 +397,7 @@ section + section {
   height: 64px !important;
   box-shadow: var(--shadow-md) !important;
   transition: var(--transition-base) !important;
+  cursor: pointer !important;
 }
 
 [vw-access-button]:hover {
@@ -404,8 +405,14 @@ section + section {
   box-shadow: var(--shadow-hover) !important;
 }
 
+/* Ensure VLibras widget and all its elements can be clicked */
 [vw-plugin-wrapper] {
   z-index: 9999 !important;
+  pointer-events: auto !important;
+}
+
+[vw-plugin-wrapper] * {
+  pointer-events: auto !important;
 }
 
 /* Ensure VLibras appears above other elements */
@@ -415,4 +422,14 @@ div[vw] div[vw-plugin-wrapper] {
 
 div[vw] div[vw-plugin-wrapper] div {
   z-index: 9999 !important;
+}
+
+/* Ensure close button works properly */
+[vw-plugin-wrapper] button,
+[vw-plugin-wrapper] .vw-btn-close,
+[vw-plugin-wrapper] [class*="close"],
+[vw-plugin-wrapper] [onclick] {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  z-index: 10001 !important;
 }
