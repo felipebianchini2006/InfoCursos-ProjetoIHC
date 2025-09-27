@@ -373,3 +373,46 @@ section + section {
   --color-primary-soft: rgba(249, 115, 22, 0.24);
   --color-accent: #2dd4bf;
 }
+
+/* VLibras Widget Styles */
+.vlibras-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+}
+
+[vw] {
+  position: relative !important;
+}
+
+[vw-access-button] {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 10000 !important;
+  background: var(--color-primary) !important;
+  border-radius: 50% !important;
+  width: 64px !important;
+  height: 64px !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: var(--transition-base) !important;
+}
+
+[vw-access-button]:hover {
+  transform: scale(1.1) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+
+[vw-plugin-wrapper] {
+  z-index: 9999 !important;
+}
+
+/* Ensure VLibras appears above other elements */
+div[vw] div[vw-plugin-wrapper] {
+  z-index: 9999 !important;
+}
+
+div[vw] div[vw-plugin-wrapper] div {
+  z-index: 9999 !important;
+}

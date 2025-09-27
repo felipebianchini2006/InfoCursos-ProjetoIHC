@@ -10,9 +10,9 @@ const News = () => (
         <span className="badge">
           <LuNewspaper size={16} /> Insights do mercado de TI
         </span>
-        <h1>Novidades e tendências em tecnologia</h1>
+        <h1>Novidades e tendÃªncias em tecnologia</h1>
         <p>
-          Curadoria semanal com o que importa no universo de desenvolvimento, produto, dados e carreira. Informação
+          Curadoria semanal com o que importa no universo de desenvolvimento, produto, dados e carreira. InformaÃ§Ã£o
           relevante, linguagem direta e foco no seu crescimento.
         </p>
       </div>
