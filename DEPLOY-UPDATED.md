@@ -1,10 +1,15 @@
 # 🚀 Guia de Deploy GitHub Pages - ATUALIZADO
 
-## ❌ Problema encontrado:
+## ❌ Problemas encontrados:
 ```
-Permission to felipebianchini2006/InfoCursos-ProjetoIHC.git denied to github-actions[bot]
-Error: Action failed with "The process '/usr/bin/git' failed with exit code 128"
+1. Permission to felipebianchini2006/InfoCursos-ProjetoIHC.git denied to github-actions[bot]
+2. Error: This request has been automatically failed because it uses a deprecated version of actions/upload-artifact: v3
 ```
+
+## ✅ Correções aplicadas:
+- Atualizadas todas as actions para versões mais recentes (v4)
+- Criado workflow separado para build e deploy
+- Adicionado workflow_dispatch para execução manual
 
 ## ✅ Soluções implementadas:
 
@@ -34,13 +39,17 @@ Error: Action failed with "The process '/usr/bin/git' failed with exit code 128"
 
 ### **Opção 2: GitHub Actions (Método Novo)**
 
-O arquivo `deploy.yml` foi atualizado com as permissões corretas e usa o método oficial mais recente do GitHub.
+Agora temos 3 workflows disponíveis:
+- `deploy.yml` - Método oficial atualizado
+- `deploy-alternative.yml` - Método clássico 
+- `build-deploy.yml` - Separação build/deploy (RECOMENDADO)
 
-**Mas você precisa configurar primeiro:**
+**Para configurar:**
 
 1. Vá para Settings > Pages
 2. Em "Source", selecione: **"GitHub Actions"**
-3. O workflow rodará automaticamente
+3. O workflow `build-deploy.yml` rodará automaticamente
+4. Você também pode executar manualmente em Actions > Build and Deploy to GitHub Pages > Run workflow
 
 ### **Opção 3: GitHub Actions (Método Clássico)**
 
