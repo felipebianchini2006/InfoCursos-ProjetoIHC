@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && echo. > docs/.nojekyll",
-    "build:gh-pages": "vite build && echo. > docs/.nojekyll",
+    "build": "vite build && node -e \"require('fs').writeFileSync('docs/.nojekyll', '')\"",
+    "build:gh-pages": "vite build && node -e \"require('fs').writeFileSync('docs/.nojekyll', '')\"",
     "lint": "eslint .",
     "preview": "vite preview"
   },

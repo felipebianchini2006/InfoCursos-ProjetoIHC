@@ -62,11 +62,13 @@ npm run preview
 ## 🌐 URL Final:
 Após o deploy: **https://felipebianchini2006.github.io/InfoCursos-ProjetoIHC/**
 
-## ⚠️ Possíveis problemas:
+## ⚠️ Possíveis problemas e soluções:
 
 1. **404 na página inicial:** Verifique se o `base` no vite.config.js está correto
 2. **Assets não carregam:** Certifique-se que o `.nojekyll` existe na pasta docs
 3. **Roteamento não funciona:** GitHub Pages não suporta SPA routing por padrão (esse projeto usa hash routing para resolver isso)
+4. **Erro "echo. not found":** ✅ CORRIGIDO - Agora usa comando Node.js multiplataforma
+5. **Aviso sobre Node.js 18:** O GitHub Actions usa Node.js 20+ automaticamente
 
 ## 🎉 Funcionalidades incluídas:
 - ✅ Site responsivo e moderno
