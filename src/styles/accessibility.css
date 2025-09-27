@@ -1,0 +1,89 @@
+.accessibility-panel {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: var(--shadow-md);
+  z-index: 120;
+  width: min(280px, calc(100% - 2rem));
+}
+
+:root[data-theme='dark'] .accessibility-panel {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.accessibility-group {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.accessibility-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.accessibility-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.accessibility-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(88, 83, 255, 0.2);
+  background: rgba(88, 83, 255, 0.08);
+  color: var(--color-primary-strong);
+  font-weight: 600;
+  transition: var(--transition-base);
+}
+
+.accessibility-button[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.accessibility-button:not([disabled]):hover {
+  background: rgba(88, 83, 255, 0.14);
+}
+
+.accessibility-value {
+  min-width: 48px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.accessibility-select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--color-text);
+}
+
+:root[data-theme='dark'] .accessibility-select {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+@media (max-width: 640px) {
+  .accessibility-panel {
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
