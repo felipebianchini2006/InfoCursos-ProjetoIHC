@@ -1,13 +1,13 @@
-export const news = [
+ï»¿export const news = [
   {
     id: 'ia-salas-de-aula',
     slug: 'inteligencia-artificial-nas-escolas-brasileiras',
-    title: 'Inteligência Artificial redefine a aprendizagem nas salas de aula',
+    title: 'InteligÃªncia Artificial redefine a aprendizagem nas salas de aula',
     summary:
-      'Plataformas nacionais utilizam algoritmos para adaptar conteúdos ao ritmo de cada estudante e impulsionam a inclusão.',
+      'Plataformas nacionais utilizam algoritmos para adaptar conteÃºdos ao ritmo de cada estudante e impulsionam a inclusÃ£o.',
     highlight:
-      'A tendência torna o processo mais interativo e aumenta a retenção de conhecimento, mas reforça a importância de práticas éticas com IA.',
-    category: 'Tendências',
+      'A tendÃªncia torna o processo mais interativo e aumenta a retenÃ§Ã£o de conhecimento, mas reforÃ§a a importÃ¢ncia de prÃ¡ticas Ã©ticas com IA.',
+    category: 'TendÃªncias',
     publishedAt: '12 jan 2025',
     readTime: '5 min',
     cover: {
@@ -16,13 +16,13 @@ export const news = [
       credits: 'Unsplash / Joshua Hoehne',
     },
     content: [
-      'O uso de Inteligência Artificial nas escolas brasileiras cresce em ritmo acelerado. Redes públicas e privadas começam a testar plataformas que analisam o desempenho dos alunos e sugerem trilhas de aprendizagem personalizadas.',
-      'Para os estudantes, a IA permite feedback imediato e conteúdos ajustados ao ritmo individual. Já os professores ganham relatórios de desempenho e sugestões de atividades diferenciadas para cada turma.',
-      'Especialistas alertam que a implementação precisa ser acompanhada de políticas claras sobre privacidade e proteção de dados, além de garantir inclusão para escolas com infraestrutura limitada.',
+      'O uso de InteligÃªncia Artificial nas escolas brasileiras cresce em ritmo acelerado. Redes pÃºblicas e privadas comeÃ§am a testar plataformas que analisam o desempenho dos alunos e sugerem trilhas de aprendizagem personalizadas.',
+      'Para os estudantes, a IA permite feedback imediato e conteÃºdos ajustados ao ritmo individual. JÃ¡ os professores ganham relatÃ³rios de desempenho e sugestÃµes de atividades diferenciadas para cada turma.',
+      'Especialistas alertam que a implementaÃ§Ã£o precisa ser acompanhada de polÃ­ticas claras sobre privacidade e proteÃ§Ã£o de dados, alÃ©m de garantir inclusÃ£o para escolas com infraestrutura limitada.',
     ],
     references: [
       {
-        label: 'Guia do MEC sobre IA na educação',
+        label: 'Guia do MEC sobre IA na educaÃ§Ã£o',
         url: 'https://www.gov.br/mec',
       },
     ],
@@ -32,7 +32,7 @@ export const news = [
     slug: 'linguagens-de-programacao-populares-em-2025',
     title: 'As linguagens mais queridas pelos desenvolvedores em 2025',
     summary:
-      'JavaScript, Python e Java seguem líderes, mas Rust e Go ganham espaço graças à performance e ao ecossistema cloud native.',
+      'JavaScript, Python e Java seguem lÃ­deres, mas Rust e Go ganham espaÃ§o graÃ§as Ã  performance e ao ecossistema cloud native.',
     highlight:
       'Projetos que combinam diferentes linguagens aumentam a empregabilidade e abrem portas em equipes multidisciplinares.',
     category: 'Mercado',
@@ -40,13 +40,13 @@ export const news = [
     readTime: '4 min',
     cover: {
       src: 'https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Notebook com telas de código colorido representando linguagens de programação',
+      alt: 'Notebook com telas de cÃ³digo colorido representando linguagens de programaÃ§Ã£o',
       credits: 'Unsplash / Danial Igdery',
     },
     content: [
-      'A pesquisa anual Stack Pulse 2025 ouviu mais de 40 mil desenvolvedores e confirmou a força de JavaScript, Python e Java como as linguagens preferidas para projetos de larga escala.',
-      'Rust e Go, no entanto, aparecem como grandes apostas para microsserviços e aplicações de infraestrutura. A combinação de performance e comunidades ativas tem ampliado a adoção em startups e empresas consolidadas.',
-      'Para quem está começando, dominar fundamentos de mais de uma linguagem continua sendo diferencial competitivo, principalmente quando aliado a conhecimentos de arquitetura e produto.',
+      'A pesquisa anual Stack Pulse 2025 ouviu mais de 40 mil desenvolvedores e confirmou a forÃ§a de JavaScript, Python e Java como as linguagens preferidas para projetos de larga escala.',
+      'Rust e Go, no entanto, aparecem como grandes apostas para microsserviÃ§os e aplicaÃ§Ãµes de infraestrutura. A combinaÃ§Ã£o de performance e comunidades ativas tem ampliado a adoÃ§Ã£o em startups e empresas consolidadas.',
+      'Para quem estÃ¡ comeÃ§ando, dominar fundamentos de mais de uma linguagem continua sendo diferencial competitivo, principalmente quando aliado a conhecimentos de arquitetura e produto.',
     ],
     references: [
       {
@@ -60,9 +60,9 @@ export const news = [
     slug: 'habilidades-humanas-em-alta-na-carreira-de-ti',
     title: 'Carreira em TI: habilidades humanas em alta demanda',
     summary:
-      'Liderança, comunicação e visão de produto tornaram-se diferenciais para quem busca cargos sênior na área de tecnologia.',
+      'LideranÃ§a, comunicaÃ§Ã£o e visÃ£o de produto tornaram-se diferenciais para quem busca cargos sÃªnior na Ã¡rea de tecnologia.',
     highlight:
-      'Conhecer metodologias ágeis e ter repertório de UX ajuda a construir soluções mais relevantes para as pessoas.',
+      'Conhecer metodologias Ã¡geis e ter repertÃ³rio de UX ajuda a construir soluÃ§Ãµes mais relevantes para as pessoas.',
     category: 'Carreira',
     publishedAt: '21 fev 2025',
     readTime: '6 min',
@@ -72,13 +72,13 @@ export const news = [
       credits: 'Unsplash / Kaleidico',
     },
     content: [
-      'A maturidade digital das empresas brasileiras fez com que profissionais de TI fossem convidados para discussões estratégicas. Com isso, habilidades humanas ganharam peso nas contratações.',
-      'Comunicação, liderança situacional e capacidade de traduzir complexidade técnica para stakeholders aparecem entre os requisitos mais citados pelos recrutadores.',
-      'Cursos e comunidades que combinam tecnologia com soft skills e práticas de produto têm apresentado melhores resultados de recolocação, segundo dados do Observatório Tech Brasil.',
+      'A maturidade digital das empresas brasileiras fez com que profissionais de TI fossem convidados para discussÃµes estratÃ©gicas. Com isso, habilidades humanas ganharam peso nas contrataÃ§Ãµes.',
+      'ComunicaÃ§Ã£o, lideranÃ§a situacional e capacidade de traduzir complexidade tÃ©cnica para stakeholders aparecem entre os requisitos mais citados pelos recrutadores.',
+      'Cursos e comunidades que combinam tecnologia com soft skills e prÃ¡ticas de produto tÃªm apresentado melhores resultados de recolocaÃ§Ã£o, segundo dados do ObservatÃ³rio Tech Brasil.',
     ],
     references: [
       {
-        label: 'Observatório Tech Brasil',
+        label: 'ObservatÃ³rio Tech Brasil',
         url: 'https://observatoriotech.org',
       },
     ],

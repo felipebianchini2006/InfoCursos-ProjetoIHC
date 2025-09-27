@@ -1,29 +1,40 @@
-import { useEffect } from 'react'
+﻿import { useEffect } from 'react'
 
 const VlibrasWidget = () => {
   useEffect(() => {
-    const script = document.createElement('script')
-    script.src = 'https://vlibras.gov.br/app/vlibras-plugin.js'
-    script.async = true
-    script.onload = () => {
+    let attempts = 0
+    const maxAttempts = 20
+
+    const initWidget = () => {
       if (window?.VLibras?.Widget) {
-        // eslint-disable-next-line no-new
-        new window.VLibras.Widget('https://vlibras.gov.br/app')
+        if (!window.__vlibrasWidgetInstance) {
+          window.__vlibrasWidgetInstance = new window.VLibras.Widget('https://vlibras.gov.br/app')
+        }
+        return true
       }
+      return false
     }
 
-    document.body.appendChild(script)
-
-    return () => {
-      document.body.removeChild(script)
+    if (!initWidget()) {
+      const interval = setInterval(() => {
+        attempts += 1
+        if (initWidget() || attempts >= maxAttempts) {
+          clearInterval(interval)
+        }
+      }, 500)
+      return () => clearInterval(interval)
     }
+
+    return undefined
   }, [])
 
   return (
-    <div vw className="enabled" style={{ zIndex: 999 }}>
-      <div vw-access-button className="active" />
-      <div vw-plugin-wrapper>
-        <div className="vw-plugin-top-wrapper" />
+    <div className="vlibras-container" aria-hidden="true">
+      <div vw className="enabled">
+        <div vw-access-button className="active" />
+        <div vw-plugin-wrapper>
+          <div className="vw-plugin-top-wrapper" />
+        </div>
       </div>
     </div>
   )
