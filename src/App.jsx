@@ -12,25 +12,35 @@ import Register from './pages/Register.jsx'
 import RecoverPassword from './pages/RecoverPassword.jsx'
 import { ThemeContext } from './context/ThemeContext.jsx'
 
+const basePath =
+  import.meta.env.BASE_URL !== '/' && import.meta.env.BASE_URL.endsWith('/')
+    ? import.meta.env.BASE_URL.slice(0, -1)
+    : import.meta.env.BASE_URL
+
 const createRouter = () =>
-  createBrowserRouter([
+  createBrowserRouter(
+    [
+      {
+        path: '/',
+        element: <AppLayout />,
+        children: [
+          { index: true, element: <Home /> },
+          { path: 'cursos', element: <Courses /> },
+          { path: 'novidades', element: <News /> },
+          { path: 'novidades/:slug', element: <NewsArticle /> },
+          { path: 'sobre', element: <About /> },
+          { path: 'contato', element: <Contact /> },
+          { path: 'login', element: <Login /> },
+          { path: 'cadastro', element: <Register /> },
+          { path: 'recuperar-senha', element: <RecoverPassword /> },
+        ],
+      },
+      { path: '*', element: <Navigate to='/' replace /> },
+    ],
     {
-      path: '/',
-      element: <AppLayout />,
-      children: [
-        { index: true, element: <Home /> },
-        { path: 'cursos', element: <Courses /> },
-        { path: 'novidades', element: <News /> },
-        { path: 'novidades/:slug', element: <NewsArticle /> },
-        { path: 'sobre', element: <About /> },
-        { path: 'contato', element: <Contact /> },
-        { path: 'login', element: <Login /> },
-        { path: 'cadastro', element: <Register /> },
-        { path: 'recuperar-senha', element: <RecoverPassword /> },
-      ],
+      basename: basePath,
     },
-    { path: '*', element: <Navigate to="/" replace /> },
-  ])
+  )
 
 const getInitialTheme = () => {
   if (typeof window === 'undefined') return 'light'
